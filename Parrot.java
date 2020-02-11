@@ -19,14 +19,23 @@ public class Parrot implements Bird {
 
     public static void main(String[] args) {
 
+        //Parrot reference      Parrot OBJECT
         Parrot parrot = new Parrot(12, "Parrot1");
     
+        //Bird reference      Parrot OBJECT
         Bird birdParrot = new Parrot(12, "birdParrot");
+        //This works because Parrot IS A Bird
+        //We implemented the Bird interface in the Parrot Class
 
         //Zoo newZoo = new Zoo(new Parrot(12, "Parrot"));
 
         Zoo theZoo = new Zoo( new Lovebird(12, "Lovebird") );
+        //The Zoo Bird reference can take either a Parrot OR a Lovebird
+        //because they are both Birds. We implemented the Bird interface in
+        //both classes
     
+        //The behavior of this generic code changes depending on the object
+        //of the Bird reference in the zoo object
         theZoo.zooBird.chirp();
 
     }
